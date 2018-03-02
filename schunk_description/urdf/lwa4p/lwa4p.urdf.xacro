@@ -268,6 +268,16 @@
       </collision>
     </link>
 
+    <joint name="${name}_ee_joint" type="fixed">
+      <origin xyz="0 0 0.0824" rpy="0 0 0"/>
+      <parent link="${name}_6_link"/>
+      <child link="${name}_ee_link"/>
+    </joint>
+
+    <link name="${name}_ee_link">
+      <xacro:default_inertial/>
+    </link>
+
 
     <!-- extensions -->
     <xacro:schunk_lwa4p_gazebo name="${name}" />

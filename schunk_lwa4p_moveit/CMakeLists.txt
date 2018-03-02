@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(lwa4p_moveit_gazebo_custom)
+project(schunk_lwa4p_moveit)
 
 find_package(catkin REQUIRED)
 

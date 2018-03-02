@@ -1,7 +1,22 @@
-# schunk_lwa4p_gazebo_sim
-ROS package for simulating Schunk arm in Gazebo
+# Schunk lwa4p Gazebo Simulation
+ROS package for simulating Schunk arm in Gazebo using Moveit!
 
 ## How to use this driver
+### Install all ros dependecies
+Open the terminal and type:
 ```{r, engine='bash', count_lines}
-$ roslaunch lwa4p_moveit_gazebo_custom demo.launch 
+$ rosdep install schunk_lwa4p_moveit schunk_lwa4p
 ```
+
+### Run Gazebo
+Open the terminal and type:
+```{r, engine='bash', count_lines}
+$ roslaunch schunk_lwa4p sim.launch
+```
+
+### Run Moveit!
+Open the terminal and type:
+```{r, engine='bash', count_lines}
+$ roslaunch schunk_lwa4p_moveit demo.launch
+```
+

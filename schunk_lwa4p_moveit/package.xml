@@ -1,12 +1,12 @@
 <package>
 
-  <name>lwa4p_moveit_gazebo_custom</name>
+  <name>schunk_lwa4p_moveit</name>
   <version>0.3.0</version>
   <description>
-     An automatically generated package with all the configuration and launch files for using the lwa4d with the MoveIt! Motion Planning Framework
+     An automatically generated package with all the configuration and launch files for using the lwa4p with the MoveIt! Motion Planning Framework
   </description>
-  <author email="hector.azpurua@itv.org">Hector Azpurua</author>
-  <maintainer email="hector.azpurua@itv.org">Hector Azpurua</maintainer>
+  <author email="rezeck@dcc.ufmg.br">Rezeck</author>
+  <maintainer email="rezeck@dcc.ufmg.br">Rezeck</maintainer>
 
   <license>BSD</license>
 
@@ -26,8 +26,8 @@
   <run_depend>xacro</run_depend>
   <!-- This package is referenced in the warehouse launch files, but does not build out of the box at the moment. Commented the dependency until this works. -->
   <!-- <run_depend>warehouse_ros_mongo</run_depend> -->
-  <build_depend>schunk_lwa4d</build_depend>
-  <run_depend>schunk_lwa4d</run_depend>
+  <build_depend>schunk_lwa4p</build_depend>
+  <run_depend>schunk_lwa4p</run_depend>
 
 
 </package>

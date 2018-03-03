@@ -5,7 +5,8 @@ ROS package for simulating Schunk arm in Gazebo using Moveit!
 ### Install all ros dependecies
 Open the terminal and type:
 ```{r, engine='bash', count_lines}
-$ rosdep install schunk_lwa4p_moveit schunk_lwa4p
+$ sudo apt install ros-kinetic-moveit
+$ rosdep install -y -r schunk_lwa4p schunk_libm5api schunk_lwa4p_moveit
 ```
 
 ### Run Gazebo

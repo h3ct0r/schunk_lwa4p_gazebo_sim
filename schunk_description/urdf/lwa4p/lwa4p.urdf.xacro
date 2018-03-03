@@ -268,24 +268,92 @@
       </collision>
     </link>
 
+
+    <!-- ============================================================================= -->
     <!-- Add gripper -->
-    <joint name="${name}_ee_joint" type="fixed">
+    <!-- ============================================================================= -->
+    <joint name="${name}_gripper_base_joint" type="fixed">
       <origin xyz="0 0 0.0824" rpy="0 0 0"/>
       <parent link="${name}_6_link"/>
-      <child link="${name}_ee_link"/>
+      <child link="${name}_gripper_base_link"/>
     </joint>
 
-    <link name="${name}_ee_link">
+    <link name="${name}_gripper_base_link">
       <xacro:default_inertial/>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://schunk_description/meshes/gripper/base.stl" />
+        </geometry>
+        <material name="Schunk/DarkGrey" />
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://schunk_description/meshes/gripper/base.stl" />
+        </geometry>
+      </collision>
     </link>
 
 
+    <joint name="${name}_gripper_finger_left_joint" type="prismatic">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="${name}_gripper_base_link"/>
+      <child link="${name}_gripper_finger_left_link"/>
+      <axis xyz="0 1 0"/>
+      <limit effort="20.1" velocity="1.26" lower="${-0.023}" upper="${0.0}" />
+    </joint>
+    <link name="${name}_gripper_finger_left_link">
+      <xacro:default_inertial/>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://schunk_description/meshes/gripper/left.stl" />
+        </geometry>
+        <material name="Schunk/DarkGrey" />
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://schunk_description/meshes/gripper/left.stl" />
+        </geometry>
+      </collision>
+    </link>
+
+     <joint name="${name}_gripper_finger_right_joint" type="prismatic">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="${name}_gripper_base_link"/>
+      <child link="${name}_gripper_finger_right_link"/>
+      <axis xyz="0 -1 0"/>
+      <mimic joint="${name}_gripper_finger_left_joint" multiplier="1" offset="0"/> 
+      <limit effort="20.1" velocity="1.26" lower="${-0.023}" upper="${0.0}" />
+    </joint>
+    <link name="${name}_gripper_finger_right_link">
+      <xacro:default_inertial/>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://schunk_description/meshes/gripper/right.stl" />
+        </geometry>
+        <material name="Schunk/DarkGrey" />
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://schunk_description/meshes/gripper/right.stl" />
+        </geometry>
+      </collision>
+    </link>
+    <!-- ============================================================================= -->
 
 
-     <!-- Kinect link -->
+
+    <!-- ============================================================================= -->
+    <!-- Kinect link -->
+    <!-- ============================================================================= -->
     <joint name="camera_joint" type="fixed">
-      <origin xyz="${-0.08} ${0} ${0.1470}" rpy="${M_PI} ${-M_PI/2} ${M_PI}"/>
-      <parent link="${name}_6_link"/>
+      <origin xyz="${-0.056} ${0} ${0.038}" rpy="${M_PI} ${-M_PI/2} ${M_PI}"/>
+      <parent link="${name}_gripper_base_link"/>
       <child link="camera_link" />
     </joint>
     <link name="camera_link">
@@ -342,7 +410,7 @@
       <child link="camera_depth_optical_frame" />
     </joint>
     <link name="camera_depth_optical_frame"/>
-
+	<!-- ============================================================================= -->
 
     <!-- extensions -->
     <xacro:schunk_lwa4p_gazebo name="${name}" />

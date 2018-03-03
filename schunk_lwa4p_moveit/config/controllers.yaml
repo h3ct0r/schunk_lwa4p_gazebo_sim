@@ -11,6 +11,9 @@ controller_list:
       - arm_4_joint
       - arm_5_joint
       - arm_6_joint
-#   - name: gripper
-#     joints:
-#       - arm_ee_joint
+  - name: gripper
+    action_ns: gripper_action
+    type: GripperCommand
+    default: true
+    joints:
+      - arm_gripper_finger_left_joint

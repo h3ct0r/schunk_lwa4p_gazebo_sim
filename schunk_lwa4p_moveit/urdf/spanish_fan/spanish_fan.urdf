@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<robot name="fan">
+
+  <link name="fan_link">
+    <inertial>
+      <mass value="0.001"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+
+    <collision name="fan__collision">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://schunk_lwa4p_moveit/meshes/spanish_fan/spanish_fan.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+
+    <visual name="fan__visual">
+      <geometry>
+        <mesh filename="package://schunk_lwa4p_moveit/meshes/spanish_fan/spanish_fan.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </visual>
+    
+  </link>
+</robot>

@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<robot name="table">
+  <link name="table_link">
+    <inertial>
+      <mass value="1.0"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+    <collision name="table__collision">
+      <origin rpy="0 0 0" xyz="0 0 -0.33"/>
+      <geometry>
+        <box size="1.8 0.78 0.76"/>
+      </geometry>
+    </collision>
+    <visual name="table__visual">
+      <origin rpy="1.57 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://schunk_lwa4p_moveit/meshes/table/table.stl" scale="0.1 0.1 0.1"/>
+      </geometry>
+    </visual>
+    <gazebo reference="table_box">
+      <material>Gazebo/White</material>
+    </gazebo>
+  </link>
+</robot>

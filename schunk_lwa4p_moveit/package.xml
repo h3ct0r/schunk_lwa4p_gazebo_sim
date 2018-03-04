@@ -5,17 +5,25 @@
   <description>
      An automatically generated package with all the configuration and launch files for using the lwa4p with the MoveIt! Motion Planning Framework
   </description>
-  <author email="rezeck@dcc.ufmg.br">Rezeck</author>
+  <author email="rezeck@dcc.ufmg.br">Paulo Rezeck</author>
+  <author email="hector.azpurua@itv.org">Hector Azpurua</author>
+
   <maintainer email="rezeck@dcc.ufmg.br">Rezeck</maintainer>
+  <maintainer email="hector.azpurua@itv.org">Hector Azpurua</maintainer>
 
   <license>BSD</license>
 
-  <url type="website">http://moveit.ros.org/</url>
-  <url type="bugtracker">https://github.com/ros-planning/moveit/issues</url>
-  <url type="repository">https://github.com/ros-planning/moveit</url>
+  <url type="website">https://github.com/h3ct0r/schunk_lwa4p_gazebo_sim</url>
+  <url type="bugtracker">https://github.com/h3ct0r/schunk_lwa4p_gazebo_sim/issues</url>
+  <url type="repository">https://github.com/h3ct0r/schunk_lwa4p_gazebo_sim</url>
 
   <buildtool_depend>catkin</buildtool_depend>
 
+  <build_depend>schunk_lwa4p</build_depend>
+  <build_depend>schunk_description</build_depend>
+
+  <run_depend>schunk_sdh</run_depend>
+  <run_depend>schunk_lwa4p</run_depend>
   <run_depend>moveit_ros_move_group</run_depend>
   <run_depend>moveit_fake_controller_manager</run_depend>
   <run_depend>moveit_kinematics</run_depend>
@@ -24,10 +32,30 @@
   <run_depend>joint_state_publisher</run_depend>
   <run_depend>robot_state_publisher</run_depend>
   <run_depend>xacro</run_depend>
-  <!-- This package is referenced in the warehouse launch files, but does not build out of the box at the moment. Commented the dependency until this works. -->
-  <!-- <run_depend>warehouse_ros_mongo</run_depend> -->
-  <build_depend>schunk_lwa4p</build_depend>
-  <run_depend>schunk_lwa4p</run_depend>
-
+  <run_depend>canopen_motor_node</run_depend>
+  <run_depend>cob_cartesian_controller</run_depend>
+  <run_depend>cob_command_gui</run_depend>
+  <run_depend>cob_control_mode_adapter</run_depend>
+  <run_depend>cob_dashboard</run_depend>
+  <run_depend>cob_description</run_depend>
+  <run_depend>cob_frame_tracker</run_depend>
+  <run_depend>cob_gazebo_ros_control</run_depend>
+  <run_depend>cob_helper_tools</run_depend>
+  <run_depend>cob_obstacle_distance</run_depend>
+  <run_depend>cob_twist_controller</run_depend>
+  <run_depend>controller_manager</run_depend>
+  <run_depend>diagnostic_aggregator</run_depend>
+  <run_depend>gazebo_ros</run_depend>
+  <run_depend>joint_state_controller</run_depend>
+  <run_depend>joint_state_publisher</run_depend>
+  <run_depend>joint_trajectory_controller</run_depend>
+  <run_depend>position_controllers</run_depend>
+  <run_depend>robot_state_publisher</run_depend>
+  <run_depend>rostopic</run_depend>
+  <run_depend>rviz</run_depend>
+  <run_depend>schunk_description</run_depend>
+  <run_depend>topic_tools</run_depend>
+  <run_depend>velocity_controllers</run_depend>
+  <run_depend>xacro</run_depend>
 
 </package>

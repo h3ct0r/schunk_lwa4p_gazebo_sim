@@ -11,6 +11,9 @@
     <xacro:default_transmission jname="${name}_4"/>
     <xacro:default_transmission jname="${name}_5"/>
     <xacro:default_transmission jname="${name}_6"/>
+    <xacro:default_transmission jname="${name}_gripper_base"/>
+    <xacro:default_transmission jname="${name}_gripper_finger_left"/>
+    <xacro:default_transmission jname="${name}_gripper_finger_right"/>
 
   </xacro:macro>
 
